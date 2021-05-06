@@ -41,7 +41,14 @@ function processPayment(req, res) {
       logger.error(`${error.name}\n ${error.message}\n ${error.stack}\n`);
     } else {
       getInfo(payment);
-      res.send(success({ link: process.env.HOSTURL }));
+      res.send(
+        success({
+          link:
+            process.env.NODE_ENV == "production"
+              ? process.env.HOSTURL
+              : process.env.LOCALHOSTURL,
+        })
+      );
     }
   });
 }
@@ -56,8 +63,16 @@ function createPayment(socket, data) {
       payment_method: "paypal",
     },
     redirect_urls: {
-      return_url: `${process.env.HOSTURL}/success/${data.amount}`,
-      cancel_url: `${process.env.HOSTURL}/cancel`,
+      return_url: `${
+        process.env.NODE_ENV == "production"
+          ? process.env.HOSTURL
+          : process.env.LOCALHOSTURL
+      }/success/${data.amount}`,
+      cancel_url: `${
+        process.env.NODE_ENV == "production"
+          ? process.env.HOSTURL
+          : process.env.LOCALHOSTURL
+      }/cancel`,
     },
     transactions: [
       {

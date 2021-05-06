@@ -26,9 +26,9 @@ process.on("unhandledRejection", function (error, promise) {
 //initiate
 let app = express();
 app.use(express.static("public"));
-let localPortString = `${process.env.HOSTURL}`;
-let localPort = +`${process.env.HOSTURL}`.slice(localPortString.length - 4);
-let port = process.env.Port || localPort;
+let localPortString = `${process.env.LOCALHOSTURL}`;
+let localPort = +`${process.env.LOCALHOSTURL}`.slice(localPortString.length - 4);
+let port = process.env.PORT || localPort;
 let dbUsername = process.env.DBUSERNAME;
 let dbPassword = process.env.DBPASSWORD;
 let dbName = process.env.DBNAME;
