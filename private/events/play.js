@@ -45,6 +45,7 @@ function play(io, socket, requestPlays) {
     }
     if (res?.status === "checkmate") {
       socket.broadcast.to(data.user.opponent).emit("newPosition", res.position);
+      socket.emit("newPosition", res.position);
       socket.broadcast.to(data.user.opponent).emit("gameOver", res.message);
       socket.emit("gameOver", res.message);
       let resUpdate = await update("gameOver", res.players);

@@ -10,5 +10,5 @@ except for move event which uses gameId and opponentId, these can be put i a tok
 
  @(testing)
  > change to SANDBOXPAYPALCLIENTID and SANDBOXPAYPALCLIENTSECRET
- > run npm dev not "start"
+ > run npm dev not "start" eg npm run dev
  
