@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./private/index.js"
+    "start": "node ./private/index.js",
+    "dev": "NODE_ENV=development node ./private/index.js"
   },
   "author": "",
   "license": "ISC",

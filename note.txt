@@ -10,6 +10,5 @@ except for move event which uses gameId and opponentId, these can be put i a tok
 
  @(testing)
  > change to SANDBOXPAYPALCLIENTID and SANDBOXPAYPALCLIENTSECRET
- > change to testLogs collection
- > change success and cancel pay ur to localhost
+ > run npm dev not "start"
  

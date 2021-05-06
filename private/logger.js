@@ -11,7 +11,9 @@ const logger = createLogger({
     new transports.MongoDB({
       level: "error",
       db: uri,
-      collection: "logs",
+      collection: `${
+        process.env.NODE_ENV == "production" ? "logs" : "testLogs"
+      }`,
       format: format.combine(format.timestamp(), format.json()),
       options: {
         useNewUrlParser: true,

@@ -5,9 +5,9 @@ const { success } = require("../templates/success");
 const { logger } = require("../logger");
 
 paypal.configure({
-  mode: "sandbox", //sandbox or live
-  client_id: process.env.SANDBOXPAYPALCLIENTID,
-  client_secret: process.env.SANDBOXPAYPALCLIENTSECRET,
+  mode: "live", //sandbox or live
+  client_id: process.env.LIVEPAYPALCLIENTID, // SANDBOXPAYPALCLIENTID or LIVEPAYPALCLIENTID
+  client_secret: process.env.LIVEPAYPALCLIENTSECRET, // SANDBOXPAYPALCLIENTSECRET or LIVEPAYPALCLIENTSECRET
 });
 
 function deposit(socket) {
