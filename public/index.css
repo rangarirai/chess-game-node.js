@@ -1,0 +1,29 @@
+body {
+  overflow-y: auto;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+#gameBoard {
+  width: 480px;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  /* background-color: brown;
+  height: 480px; */
+}
+#left {
+  width: 25%;
+  /* background-color: rgb(42, 151, 165); */
+}
+#right {
+  width: 25%;
+  /* background-color: rgb(42, 151, 165); */
+}
+#center {
+  width: 50%;
+  /* background-color: rgb(44, 42, 165); */
+}
+.sides{
+  margin-top: 15px;
+}

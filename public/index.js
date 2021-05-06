@@ -1,0 +1,24 @@
+//variables
+let board;
+let socket = io();
+const register = document.getElementById("register");
+const login = document.getElementById("login");
+const username = document.getElementById("username");
+const password = document.getElementById("password");
+const displayUsername = document.getElementById("displayUsername");
+const displayDeposit = document.getElementById("displayDeposit");
+const displayWithdraw = document.getElementById("displayWithdraw");
+const rooms = document.getElementById("rooms");
+const requestPlay = document.getElementById("requestPlay");
+const notplaying = document.getElementById("notplaying");
+const fromWithdraw = document.getElementById("fromWithdraw");
+const fromPaypal = document.getElementById("fromPaypal");
+const online = document.getElementById("online");
+const searching = document.getElementById("searching");
+const playing = document.getElementById("playing");
+const self = document.getElementById("self");
+const opponent = document.getElementById("opponent");
+let user;
+let token;
+let searchingSize;
+let onlineSize;

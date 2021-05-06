@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home</title>
+    <link rel="stylesheet" href="lib/chessboard/css/chessboard-1.0.0.min.css" />
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <div id="left" class="sides">
+      <div>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="enter username"
+        />
+        <input
+          type="text"
+          name="password"
+          id="password"
+          placeholder="enter password"
+        />
+        <button id="login">login</button>
+        <button id="register">register</button>
+      </div>
+      <div>
+        <label for="rooms">room:</label>
+        <select name="rooms" id="rooms">
+          <option value="five">$5</option>
+          <option value="ten">$10</option>
+          <option value="twenty">$20</option>
+          <option value="fifty">$50</option>
+        </select>
+        <button id="requestPlay">play with someone</button>
+      </div>
+      <div>
+        <div>online: <span id="online">---</span></div>
+        <div>searching: <span id="searching">---</span></div>
+      </div>
+      <div>
+        <h3>please read this:</h3>
+        <ul>
+          <li>payouts are done every monday</li>
+          <li>
+            if you close the page by mistake just login and make an invalid move
+            to get back your visual
+          </li>
+          <li>
+            if you lose network, try to reconnect before you run out of time
+          </li>
+          <li>
+            game will abort if anyone does't move a piece in the first 20
+            seconds
+          </li>
+          <li>
+            if you make an invalid move you will be delayed by an alert message
+          </li>
+          <li>
+            for feedback or any queries, please email us at fpayments9@gmail.com
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="center">
+      <div id="gameBoard"></div>
+    </div>
+
+    <div id="right" class="sides">
+      <div>
+        <div>username: <span id="displayUsername">---</span></div>
+        <div>deposit: <span id="displayDeposit">---</span></div>
+        <div>withdraw: <span id="displayWithdraw">---</span></div>
+      </div>
+      <div>
+        <h2>deposit</h2>
+        <button id="fromWithdraw">from withdraw</button>
+        <button id="fromPaypal">from paypal</button>
+      </div>
+      <div>
+        <h2>time</h2>
+        <div>SELF: <span id="self">---</span></div>
+        <div>OPPONENT: <span id="opponent">---</span></div>
+      </div>
+    </div>
+
+    <script src="lib/jquery-3.6.0.min.js"></script>
+    <script src="lib/chessboard/js/chessboard-1.0.0.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="index.js"></script>
+    <script src="helper.js"></script>
+    <script src="events/domEvents.js"></script>
+    <script src="events/socketEvents.js"></script>
+  </body>
+</html>
