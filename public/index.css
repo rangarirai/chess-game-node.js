@@ -24,9 +24,10 @@ body {
   width: 50%;
   /* background-color: rgb(44, 42, 165); */
 }
-.sides{
+.sides {
   margin-top: 15px;
 }
-.warning{
-  color: rgb(155, 11, 11)
+.warning {
+  color: hsl(0, 93%, 43%);
+  background-color: black;
 }
