@@ -27,3 +27,6 @@ body {
 .sides{
   margin-top: 15px;
 }
+.warning{
+  color: rgb(155, 11, 11)
+}
