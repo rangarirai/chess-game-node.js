@@ -3,9 +3,17 @@ const { removeSearching } = require("../helper");
 function room(io, socket, requestPlays) {
   socket.on("joinRoom", async (data) => {
     removeSearching(requestPlays, data);
-    let rooms = ["one","five", "ten", "twenty", "fifty"];
+    let rooms = ["one", "five", "ten", "twenty", "fifty"];
     rooms.forEach((room) => {
       socket.leave(room);
+      // remove the socket from the requestPlays array
+      let delIndex = requestPlays[room]?.findIndex((el) => {
+        return el.socket.id == socket.id;
+      });
+      if (delIndex !== -1) {
+        requestPlays[room]?.splice(delIndex, 1);
+        io.to(room).emit("searchingSize", requestPlays[room]?.length);
+      }
     });
     socket.join(data.room);
     let newUser = { ...data.user, room: data.room, searching: false };
