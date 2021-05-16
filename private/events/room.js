@@ -3,7 +3,7 @@ const { removeSearching } = require("../helper");
 function room(io, socket, requestPlays) {
   socket.on("joinRoom", async (data) => {
     removeSearching(requestPlays, data);
-    let rooms = ["five", "ten", "twenty", "fifty"];
+    let rooms = ["one","five", "ten", "twenty", "fifty"];
     rooms.forEach((room) => {
       socket.leave(room);
     });

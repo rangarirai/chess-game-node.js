@@ -24,8 +24,8 @@ function validate(type) {
 }
 
 function realFigure(figure) {
-  const fake = ["five", "ten", "twenty", "fifty"];
-  const real = [5, 10, 20, 50];
+  const fake = ["one", "five", "ten", "twenty", "fifty"];
+  const real = [1, 5, 10, 20, 50];
   let index = fake.findIndex((e) => {
     return e == figure;
   });

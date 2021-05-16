@@ -27,7 +27,9 @@ process.on("unhandledRejection", function (error, promise) {
 let app = express();
 app.use(express.static("public"));
 let localPortString = `${process.env.LOCALHOSTURL}`;
-let localPort = +`${process.env.LOCALHOSTURL}`.slice(localPortString.length - 4);
+let localPort = +`${process.env.LOCALHOSTURL}`.slice(
+  localPortString.length - 4
+);
 let port = process.env.PORT || localPort;
 let dbUsername = process.env.DBUSERNAME;
 let dbPassword = process.env.DBPASSWORD;
@@ -58,6 +60,7 @@ db.once("open", function () {
 
   //global letiable
   let requestPlays = {
+    one: [],
     five: [],
     ten: [],
     twenty: [],
